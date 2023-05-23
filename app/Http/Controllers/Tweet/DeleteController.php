@@ -8,7 +8,6 @@ use App\Services\TweetService;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
-
 class DeleteController extends Controller
 {
     /**
