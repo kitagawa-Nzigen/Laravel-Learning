@@ -27,5 +27,30 @@
         <button type="submit">編集</button>
     </form>
 </div>
+
+
+<!-- 既存のツイート表示部分 -->
+<div class="tweet">
+    <!-- ツイートの内容 -->
+    <p>{{ $tweet->content }}</p>
+
+    <!-- コメント投稿フォーム -->
+    <form method="POST" action="/tweet/{{ $tweet->id }}/comments">
+        @csrf
+        <textarea name="body" placeholder="コメントを入力"></textarea>
+        <button type="submit">コメントを投稿</button>
+    </form>
+
+    <!-- コメント一覧表示 -->
+    @foreach ($tweet->comments as $comment)
+        <div class="comment">
+            <p>{{ $comment->body }}</p>
+        </div>
+    @endforeach
+</div>
+
+
+
+
 </body>
 </html>
